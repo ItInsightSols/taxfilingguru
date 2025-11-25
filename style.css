@@ -1,0 +1,143 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Container Split Screen */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* LEFT PANEL */
+.left-panel {
+    width: 50%;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-wrapper img {
+    width: 60%;
+    max-width: 280px;
+}
+
+/* Animated Shapes */
+.shape {
+    position: absolute;
+    background: rgba(0, 98, 204, 0.15);
+    /* light blue */
+    border-radius: 50%;
+    animation: float 6s infinite ease-in-out;
+}
+
+.shape1 {
+    width: 180px;
+    height: 180px;
+    top: -40px;
+    left: -40px;
+}
+
+.shape2 {
+    width: 140px;
+    height: 140px;
+    bottom: 20px;
+    left: 30%;
+    animation-delay: 1.5s;
+}
+
+.shape3 {
+    width: 220px;
+    height: 220px;
+    bottom: -60px;
+    right: -60px;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* RIGHT PANEL */
+.right-panel {
+    width: 50%;
+    background: #f5f9ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+}
+
+.right-panel h1 {
+    font-size: 48px;
+    color: #0056c9;
+    margin-bottom: 10px;
+}
+
+.right-panel p {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* Simple animation loader */
+.loading {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #0056c9;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-panel,
+    .right-panel {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .right-panel {
+        text-align: center;
+    }
+
+    .logo-wrapper img {
+        width: 45%;
+    }
+
+    .shape {
+        opacity: 0.3;
+    }
+}
